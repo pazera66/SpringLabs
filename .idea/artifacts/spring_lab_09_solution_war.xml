@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="spring-lab-09-solution:war">
+    <output-path>$PROJECT_DIR$/lab09/solution/target</output-path>
+    <root id="archive" name="spring-lab-09-solution-1.0.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="spring-lab-09-solution:war exploded" />
+    </root>
+  </artifact>
+</component>

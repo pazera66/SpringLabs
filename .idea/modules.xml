@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lab01/spring-lab-01.iml" filepath="$PROJECT_DIR$/lab01/spring-lab-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab01/solution/spring-lab-01-solution.iml" filepath="$PROJECT_DIR$/lab01/solution/spring-lab-01-solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab01/start/spring-lab-01-start.iml" filepath="$PROJECT_DIR$/lab01/start/spring-lab-01-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab02/spring-lab-02.iml" filepath="$PROJECT_DIR$/lab02/spring-lab-02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab02/solution/spring-lab-02-solution.iml" filepath="$PROJECT_DIR$/lab02/solution/spring-lab-02-solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab02/start/spring-lab-02-start.iml" filepath="$PROJECT_DIR$/lab02/start/spring-lab-02-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab03/spring-lab-03.iml" filepath="$PROJECT_DIR$/lab03/spring-lab-03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab03/solution/spring-lab-03-solution.iml" filepath="$PROJECT_DIR$/lab03/solution/spring-lab-03-solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab03/start/spring-lab-03-start.iml" filepath="$PROJECT_DIR$/lab03/start/spring-lab-03-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab04/spring-lab-04.iml" filepath="$PROJECT_DIR$/lab04/spring-lab-04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab04/solution/spring-lab-04-solution.iml" filepath="$PROJECT_DIR$/lab04/solution/spring-lab-04-solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab04/start/spring-lab-04-start.iml" filepath="$PROJECT_DIR$/lab04/start/spring-lab-04-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab05/spring-lab-05.iml" filepath="$PROJECT_DIR$/lab05/spring-lab-05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab05/solution/spring-lab-05-solution.iml" filepath="$PROJECT_DIR$/lab05/solution/spring-lab-05-solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab05/start/spring-lab-05-start.iml" filepath="$PROJECT_DIR$/lab05/start/spring-lab-05-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab06/spring-lab-06.iml" filepath="$PROJECT_DIR$/lab06/spring-lab-06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab07/spring-lab-07.iml" filepath="$PROJECT_DIR$/lab07/spring-lab-07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab07/solution/spring-lab-07-solution.iml" filepath="$PROJECT_DIR$/lab07/solution/spring-lab-07-solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab07/start/spring-lab-07-start.iml" filepath="$PROJECT_DIR$/lab07/start/spring-lab-07-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab08/spring-lab-08.iml" filepath="$PROJECT_DIR$/lab08/spring-lab-08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab08/solution/spring-lab-08-solution.iml" filepath="$PROJECT_DIR$/lab08/solution/spring-lab-08-solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab08/start/spring-lab-08-start.iml" filepath="$PROJECT_DIR$/lab08/start/spring-lab-08-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab09/spring-lab-09.iml" filepath="$PROJECT_DIR$/lab09/spring-lab-09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab09/solution/spring-lab-09-solution.iml" filepath="$PROJECT_DIR$/lab09/solution/spring-lab-09-solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab09/start/spring-lab-09-start.iml" filepath="$PROJECT_DIR$/lab09/start/spring-lab-09-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab10/spring-lab-10.iml" filepath="$PROJECT_DIR$/lab10/spring-lab-10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab10/solution/spring-lab-10-solution.iml" filepath="$PROJECT_DIR$/lab10/solution/spring-lab-10-solution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab10/start/spring-lab-10-start.iml" filepath="$PROJECT_DIR$/lab10/start/spring-lab-10-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab11/spring-lab-11.iml" filepath="$PROJECT_DIR$/lab11/spring-lab-11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab11/start/spring-lab-11-start.iml" filepath="$PROJECT_DIR$/lab11/start/spring-lab-11-start.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-labs.iml" filepath="$PROJECT_DIR$/spring-labs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/spring-labs-common.iml" filepath="$PROJECT_DIR$/common/spring-labs-common.iml" />
+    </modules>
+  </component>
+</project>

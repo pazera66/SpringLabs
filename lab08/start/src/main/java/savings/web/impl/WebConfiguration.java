@@ -13,6 +13,14 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.joda.JodaModule;
 import common.json.MoneyModule;
 import common.json.PercentageModule;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceView;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
+
+import java.util.List;
 
 @Configuration
 @ComponentScan(basePackageClasses = WebConfiguration.class, excludeFilters = {
@@ -21,7 +29,8 @@ import common.json.PercentageModule;
 })
 // TODO #1 Enable Web MVC support with appropriate annotation
 // TODO #2 Enable fine tuning of Web MVC configuration by extending from convenient configurer adapter
-public class WebConfiguration {
+@EnableWebMvc
+public class WebConfiguration extends WebMvcConfigurerAdapter {
 
     /*
      * This part of configuration is for classic MVC.
@@ -30,12 +39,19 @@ public class WebConfiguration {
     // TODO #3 override one of base class methods to gain access to ResourceHandlerRegistry and configure serving
     // 'src/main/webapp/resources' by Spring resources handler;
     // i.e. 'src/main/webapp/resources/css/main.css' should be available under '/resources/css/main.css';
-    public void replaceMeWithResourceHandlersConfig() {}
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry resourceHandlerRegistry) {
+        resourceHandlerRegistry.addResourceHandler("/resources/**")
+                .addResourceLocations("/resources");
+    }
 
     // TODO #4 Configure a view resolver to serve internal '.jsp' resources stored in '/WEB-INF/jsp/'
     @Bean
     public ViewResolver defaultViewResolver() {
-        return null;
+        InternalResourceViewResolver internalResourceViewResolver = new InternalResourceViewResolver();
+        internalResourceViewResolver.setPrefix("/WEB-INF/jsp/");
+        internalResourceViewResolver.setSuffix(".jsp");
+        return internalResourceViewResolver;
     }
 
     /*
@@ -44,7 +60,10 @@ public class WebConfiguration {
 
     // TODO #5 override one of base class methods to configure JSON message converter to automatically convert
     // JSON request body into entities and entities into JSON response body;
-    public void replaceMeWithMessageConvertersConfig() {}
+    @Override
+    public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
+        converters.add(buildJsonMessageConverter());
+    }
 
     public static HttpMessageConverter<?> buildJsonMessageConverter() {
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();

@@ -7,8 +7,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 import org.joda.money.Money;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +22,8 @@ import org.springframework.web.servlet.ModelAndView;
 import savings.model.PaybackConfirmation;
 import savings.model.Purchase;
 import savings.service.PaybackBookKeeper;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/payback")
@@ -61,12 +68,29 @@ public class PaybackController {
     // TODO #1 add validation for 'purchaseForm' and bindingResults
     // TODO #2 return ModelAndView with appropriate view, depending on validation results
     @RequestMapping(value = "/confirm", method = POST)
-    public PaybackConfirmation paybackConfirmation(@ModelAttribute PurchaseForm purchaseForm) {
-        return paybackBookKeeper.registerPaybackFor(new Purchase(
+    public ModelAndView paybackConfirmation(@Valid @ModelAttribute PurchaseForm purchaseForm, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()){
+            ModelAndView modelAndView = new ModelAndView("payback/new");
+            modelAndView.addObject("purchaseForm", purchaseForm);
+            return modelAndView;
+        }
+
+
+
+        PaybackConfirmation paybackConfirmation = paybackBookKeeper.registerPaybackFor(new Purchase(
                 purchaseForm.transactionValue,
                 purchaseForm.creditCardNumber,
                 purchaseForm.merchantNumber,
-                now()));
+                now() ));
+        ModelAndView modelAndView = new ModelAndView("payback/confirm");
+        modelAndView.addObject("paybackConfirmation", paybackConfirmation);
+        return modelAndView;
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<String> handleRuntimeException(RuntimeException ex){
+        ResponseEntity<String> responseEntity = new ResponseEntity<String>(HttpStatus.I_AM_A_TEAPOT);
+        return responseEntity;
     }
 
     public static class PurchaseForm {

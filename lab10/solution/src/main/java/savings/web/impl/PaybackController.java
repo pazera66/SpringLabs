@@ -69,8 +69,7 @@ public class PaybackController {
     // TODO #1 add validation for 'purchaseForm' and bindingResults
     // TODO #2 return ModelAndView with appropriate view, depending on validation results
     @RequestMapping(value = "/confirm", method = POST)
-    public ModelAndView paybackConfirmation(@Valid @ModelAttribute PurchaseForm purchaseForm,
-                                            BindingResult bindingResult) {
+    public ModelAndView paybackConfirmation(@Valid @ModelAttribute PurchaseForm purchaseForm, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             ModelAndView modelAndView = new ModelAndView("payback/new");
             modelAndView.addObject("purchaseForm", purchaseForm);

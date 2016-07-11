@@ -5,6 +5,7 @@ import static org.joda.time.DateTime.now;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.joda.money.Money;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,7 @@ import savings.model.Purchase;
 import savings.service.PaybackBookKeeper;
 
 import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Controller
 @RequestMapping("/payback")
@@ -69,14 +71,11 @@ public class PaybackController {
     // TODO #2 return ModelAndView with appropriate view, depending on validation results
     @RequestMapping(value = "/confirm", method = POST)
     public ModelAndView paybackConfirmation(@Valid @ModelAttribute PurchaseForm purchaseForm, BindingResult bindingResult) {
-        if(bindingResult.hasErrors()){
+        if( bindingResult.hasErrors()){
             ModelAndView modelAndView = new ModelAndView("payback/new");
             modelAndView.addObject("purchaseForm", purchaseForm);
             return modelAndView;
         }
-
-
-
         PaybackConfirmation paybackConfirmation = paybackBookKeeper.registerPaybackFor(new Purchase(
                 purchaseForm.transactionValue,
                 purchaseForm.creditCardNumber,
@@ -87,18 +86,26 @@ public class PaybackController {
         return modelAndView;
     }
 
-    @ExceptionHandler
-    public ResponseEntity<String> handleRuntimeException(RuntimeException ex){
-        ResponseEntity<String> responseEntity = new ResponseEntity<String>(HttpStatus.I_AM_A_TEAPOT);
+    @RequestMapping(value = "/teapot", method=GET)
+    public ModelAndView paybackConfirmation(){
+        throw new RuntimeException();
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<String> handleIOException(RuntimeException ex){
+        ResponseEntity<String> responseEntity = new ResponseEntity<>("Tea, Earl Grey, Hot", HttpStatus.I_AM_A_TEAPOT);
         return responseEntity;
     }
 
     public static class PurchaseForm {
 
+        @NotBlank
         public String creditCardNumber;
 
+        @NotBlank
         public String merchantNumber;
 
+        @NotNull
         public Money transactionValue;
 
         public String getCreditCardNumber() {

@@ -30,6 +30,7 @@
                <td>${payback.amount}</td>
                <!-- TODO #1 add SpEL evalutions for `date` field -->
                <td><spring:eval expression="payback.date"/></td>
+
            </tr>
        </c:forEach>
     </tbody>

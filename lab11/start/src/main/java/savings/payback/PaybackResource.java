@@ -24,7 +24,7 @@ import savings.payback.PaybackBookKeeper;
 
 @RestController
 @RequestMapping("/api/payback")
-public class PaybackResource {
+public class  PaybackResource {
 
     private final PaybackBookKeeper paybackBookKeeper;
 

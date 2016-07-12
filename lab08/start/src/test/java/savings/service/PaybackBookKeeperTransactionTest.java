@@ -26,6 +26,7 @@ import savings.model.Purchase;
 import savings.repository.AccountRepository;
 import savings.repository.PaybackRepository;
 
+//@Ignore
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration
 public class PaybackBookKeeperTransactionTest {

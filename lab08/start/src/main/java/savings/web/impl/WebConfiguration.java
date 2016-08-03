@@ -30,6 +30,7 @@ import java.util.List;
 // TODO #1 Enable Web MVC support with appropriate annotation
 // TODO #2 Enable fine tuning of Web MVC configuration by extending from convenient configurer adapter
 @EnableWebMvc
+
 public class WebConfiguration extends WebMvcConfigurerAdapter {
 
     /*

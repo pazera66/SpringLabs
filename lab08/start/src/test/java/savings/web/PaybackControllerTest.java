@@ -71,7 +71,7 @@ public class PaybackControllerTest {
             .andExpect(status().isOk())
             .andExpect(view().name("payback/new"));
     }
-@Ignore
+//@Ignore
     @Test
     public void shouldPostForm() throws Exception {
         mockMvc.perform(post("/payback/confirm")

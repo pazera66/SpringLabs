@@ -26,6 +26,9 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-context:4.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:4.0.2.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.0.2.RELEASE" />
+          <element id="archive" name="spring-lab-08-start-1.0.0-SNAPSHOT.jar">
+            <element id="module-output" name="spring-lab-08-start" />
+          </element>
           <element id="archive" name="spring-labs-common-1.0.0-SNAPSHOT.jar">
             <element id="module-output" name="spring-labs-common" />
           </element>
